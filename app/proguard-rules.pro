@@ -32,6 +32,9 @@
 #bugly
 -dontwarn com.tencent.bugly.**
 -keep public class com.tencent.bugly.**{*;}
+# tinker混淆规则
+-dontwarn com.tencent.tinker.**
+-keep class com.tencent.tinker.** { *; }
 #-------------------------------------------------------------------------
 
 #---------------------------------3.与js互相调用的类------------------------
@@ -86,6 +89,7 @@
 -keep public class com.android.vending.licensing.ILicensingService              # 保持哪些类不被混淆
 -keep public class * extends android.view.View
 -keep public class * extends android.support.**   #如果有引用v4、v7包可以添加下面这行
+ -keep class android.support.**{*;}
 # 保持 native 方法不被混淆
 -keepclasseswithmembernames class * {
     native <methods>;
