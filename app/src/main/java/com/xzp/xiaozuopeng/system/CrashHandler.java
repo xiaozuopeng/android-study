@@ -65,8 +65,8 @@ public class CrashHandler implements UncaughtExceptionHandler {
      * @param context
      */
     public void init(Context context, String crashLogPath) {
-        mContext = context;
-        crashLogPath = crashLogPath;
+        this.mContext = context;
+        this.crashLogPath = crashLogPath;
         // 获取系统默认的UncaughtException处理器
         mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();
         // 设置该CrashHandler为程序的默认处理器
