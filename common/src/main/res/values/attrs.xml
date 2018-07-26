@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GuideView">
+        <attr name="bottomDotsDrawable" format="reference" />
+        <attr name="aboveDotDrawable" format="reference" />
+        <attr name="isHideDots" format="boolean" />
+        <attr name="isShowAnimation" format="boolean" />
+    </declare-styleable>
+</resources>

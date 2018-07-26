@@ -1,16 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
-
     compileSdkVersion rootProject.ext.versions['compileSdkVersion']
-    buildToolsVersion rootProject.ext.versions['buildToolsVersion']
 
     defaultConfig {
-        applicationId "com.huaao.ejingwu.standard.rebuild"
         minSdkVersion rootProject.ext.versions['minSdkVersion']
         targetSdkVersion rootProject.ext.versions['targetSdkVersion']
-        versionCode rootProject.ext.versions['versionCode']
-        versionName rootProject.ext.versions['versionName']
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -37,6 +32,10 @@ android {
 }
 
 dependencies {
-    implementation project(':common')
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["constraint-layout"]
+    api rootProject.ext.dependencies["AndPermission"]
+//    api rootProject.ext.dependencies["ARouter"]
 //    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }
