@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.huaao.ejingwu.tesseractocrlibrary">
+
+
+    <application>
+        <activity android:name=".OCRActivity"/>
+        <activity android:name=".ResultActivity"/>
+    </application>
+</manifest>

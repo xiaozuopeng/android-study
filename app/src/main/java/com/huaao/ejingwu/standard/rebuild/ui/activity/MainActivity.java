@@ -1,7 +1,5 @@
 package com.huaao.ejingwu.standard.rebuild.ui.activity;
 
-import android.content.ActivityNotFoundException;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.view.View;
 
@@ -11,6 +9,7 @@ import com.huaao.ejingwu.common.utils.ToastUtils;
 import com.huaao.ejingwu.standard.rebuild.R;
 import com.huaao.ejingwu.standard.rebuild.databinding.ActivityMainBinding;
 import com.huaao.ejingwu.standard.rebuild.ui.viewmodel.MainViewModel;
+import com.huaao.ejingwu.tesseractocrlibrary.OCRActivity;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
 
@@ -30,17 +29,20 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     protected void init() {
         mBinding.btnWxPay.setOnClickListener((View view) -> {
 //            startActivity(new Intent(view.getContext(), WebViewActivity.class));
-            try {
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                ComponentName cmp = new ComponentName("com.tencent.mm","com.tencent.mm.ui.LauncherUI");
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setComponent(cmp);
-                startActivity(intent);
-            } catch (ActivityNotFoundException e) {
-                // TODO: handle exception
-                ToastUtils.ToastShort("检查到您手机没有安装微信，请安装后使用该功能");
-            }
+
+            startActivity(new Intent(view.getContext(), OCRActivity.class));
+
+//            try {
+//                Intent intent = new Intent(Intent.ACTION_MAIN);
+//                ComponentName cmp = new ComponentName("com.tencent.mm","com.tencent.mm.ui.LauncherUI");
+//                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                intent.setComponent(cmp);
+//                startActivity(intent);
+//            } catch (ActivityNotFoundException e) {
+//                // TODO: handle exception
+//                ToastUtils.ToastShort("检查到您手机没有安装微信，请安装后使用该功能");
+//            }
         });
     }
 

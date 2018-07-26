@@ -26,7 +26,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         AndPermission.with(this)
                 .runtime()
-                .permission(Permission.Group.STORAGE)
+                .permission(Permission.Group.STORAGE, Permission.Group.CAMERA)
                 .onGranted(permissions -> {
                     goToMain();
                 })
