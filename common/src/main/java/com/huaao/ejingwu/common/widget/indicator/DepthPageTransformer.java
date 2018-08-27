@@ -1,4 +1,4 @@
-package com.huaao.ejingwu.common.widget;
+package com.huaao.ejingwu.common.widget.indicator;
 
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;

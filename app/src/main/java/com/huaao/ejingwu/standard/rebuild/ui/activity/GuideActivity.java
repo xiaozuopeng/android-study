@@ -1,12 +1,12 @@
 package com.huaao.ejingwu.standard.rebuild.ui.activity;
 
-import com.huaao.ejingwu.common.base.BaseActivity;
+import com.huaao.ejingwu.common.base.BaseMvvmActivity;
 import com.huaao.ejingwu.standard.rebuild.R;
 import com.huaao.ejingwu.standard.rebuild.databinding.ActivityGuideBinding;
 import com.huaao.ejingwu.standard.rebuild.ui.viewmodel.GuidViewModel;
 import com.huaao.ejingwu.common.widget.GuideView;
 
-public class GuideActivity extends BaseActivity<ActivityGuideBinding, GuidViewModel> implements GuideView.OnNextBtnClickLister {
+public class GuideActivity extends BaseMvvmActivity<ActivityGuideBinding, GuidViewModel> implements GuideView.OnNextBtnClickLister {
 
     private int[] imgs = {R.drawable.guide_one, R.drawable.guide_two, R.drawable.guide_three, R.drawable.guide_four};
 

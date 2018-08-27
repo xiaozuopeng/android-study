@@ -1,5 +1,3 @@
-apply from: "config.gradle"
-
 buildscript {
 
     repositories {
@@ -24,4 +22,14 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    compileSdkVersion = 27
+    buildToolsVersion = '27.0.3'
+    minSdkVersion = '15'
+    targetSdkVersion = '27'
+    supportLibraryVersion = '27.1.1'
+    versionCode = 1
+    versionName = '1.0'
 }

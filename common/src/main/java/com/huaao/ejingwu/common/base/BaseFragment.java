@@ -1,7 +1,5 @@
 package com.huaao.ejingwu.common.base;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,70 +10,39 @@ import android.view.ViewGroup;
 
 /**
  * @author: xzp
- * @date: 2018/6/27
+ * @date: 2018/7/26
  * @desc:
  */
-public abstract class BaseFragment<B extends ViewDataBinding, VM extends BaseViewModel> extends Fragment {
-
-    protected B mBinding;
-    protected VM mViewModel;
+public class BaseFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (getLayoutRes() == 0)
-            return super.onCreateView(inflater, container, savedInstanceState);
-        if (mBinding == null) {
-            mBinding = DataBindingUtil.inflate(inflater, getLayoutRes(), container, false);
-        }
-//        mBinding.setVariable(initVariableId(), mViewModel = initViewModel());
-        mViewModel = initViewModel();
-        return mBinding.getRoot();
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        mViewModel.onAttach();
-
-        init();
     }
 
-//    /**
-//     * 初始化ViewModel的id
-//     *
-//     * @return BR的id
-//     */
-//    public abstract int initVariableId();
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 
-    /**
-     * 传入布局文件
-     *
-     * @return 基类会自动生成对应的DataBinding供导出类使用
-     */
-    protected abstract int getLayoutRes();
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
 
-    /**
-     * 初始化ViewModel
-     *
-     * @return 继承BaseViewModel的ViewModel
-     */
-    public abstract VM initViewModel();
-
-    protected abstract void init();
-
-    public boolean onBackPressed() {
-        return false;
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mBinding != null) {
-            mBinding.unbind();
-        }
-        mViewModel.onDetach();
-        mViewModel = null;
     }
 }

@@ -24,6 +24,7 @@
             android:name=".ui.activity.GuideActivity"
             android:theme="@style/Theme.FullScreen"/>
         <activity android:name=".ui.activity.WebViewActivity"/>
+        <activity android:name=".ui.activity.MapViewActivity"/>
     </application>
 
 </manifest>

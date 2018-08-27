@@ -54,7 +54,7 @@ public class ContainerActivity extends AppCompatActivity {
                 throw new IllegalArgumentException("can not find page fragmentName");
             }
             Class<?> fragmentClass = Class.forName(fragmentName);
-            BaseFragment fragment = (BaseFragment) fragmentClass.newInstance();
+            BaseMvvmFragment fragment = (BaseMvvmFragment) fragmentClass.newInstance();
 
             Bundle args = data.getBundleExtra(BUNDLE);
             if (args != null) {
@@ -77,8 +77,8 @@ public class ContainerActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(mianLayout.getId());
-        if (fragment instanceof BaseFragment) {
-            if (!((BaseFragment) fragment).onBackPressed()) {
+        if (fragment instanceof BaseMvvmFragment) {
+            if (!((BaseMvvmFragment) fragment).onBackPressed()) {
                 super.onBackPressed();
             }
         } else {

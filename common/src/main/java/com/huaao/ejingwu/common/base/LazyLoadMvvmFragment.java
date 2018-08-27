@@ -10,7 +10,7 @@ import android.view.View;
  * @date: 2018/6/28
  * @desc:
  */
-public abstract class LazyLoadFragment extends BaseFragment {
+public abstract class LazyLoadMvvmFragment extends BaseMvvmFragment {
 
     /**
      * 是否允许加载数据

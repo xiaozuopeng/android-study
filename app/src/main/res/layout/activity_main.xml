@@ -1,22 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.activity.MainActivity">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#c7c7c7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+
+            <ImageView
+                android:id="@+id/iv_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"/>
+
+            <ImageView
+                android:id="@+id/iv_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"/>
+
+            <ImageView
+                android:id="@+id/iv_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Map"/>
+
+        <Button
+            android:id="@+id/btn_web_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WebView"/>
+
+        <Button
+            android:id="@+id/btn_ocr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OCR"/>
 
         <Button
             android:id="@+id/btn_wx_pay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="微信支付"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:text="微信支付"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
 </layout>

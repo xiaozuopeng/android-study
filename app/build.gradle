@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 
 android {
 
-    compileSdkVersion rootProject.ext.versions['compileSdkVersion']
-    buildToolsVersion rootProject.ext.versions['buildToolsVersion']
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         applicationId "com.huaao.ejingwu.standard.rebuild"
-        minSdkVersion rootProject.ext.versions['minSdkVersion']
-        targetSdkVersion rootProject.ext.versions['targetSdkVersion']
-        versionCode rootProject.ext.versions['versionCode']
-        versionName rootProject.ext.versions['versionName']
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -39,5 +39,4 @@ android {
 dependencies {
     implementation project(':common')
     implementation project(':tesseractocrlibrary')
-//    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }

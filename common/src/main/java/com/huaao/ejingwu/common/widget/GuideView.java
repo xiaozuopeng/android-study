@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 
 import com.huaao.ejingwu.common.R;
 import com.huaao.ejingwu.common.utils.DimensionUtils;
+import com.huaao.ejingwu.common.widget.indicator.DepthPageTransformer;
 
 import java.util.ArrayList;
 import java.util.List;
